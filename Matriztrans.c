@@ -1,31 +1,35 @@
 #include <stdio.h>
+#include <stdlib.h>
+
 
 int main(void)
 {
-    int di;
-    int dj;
-    printf("Inserta la dimension de la matriz en i\n");
-    scanf("%d", &di);
-    printf("Inserta la dimension de la matriz en j\n");
-    scanf("%d", &dj);
-    int matrix[di][dj];
+    int dx;
+    int dy;
+    int numero;
 
-    for (int i = 0; i < di; i++)
+    printf("Inserta la dimension de su matriz en las filas\n");
+    scanf("%d", &dx);
+    printf("Inserta la dimension de su matriz en las columnas\n");
+    scanf("%d", &dy);
+    int matrix[dx][dy];
+
+    for (int i = 0; i < dx; i++)
     {
-        for (int j = 0; j < dj; j++)
+        for (int j = 0; j < dy; j++)
         {
-            matrix[i][j] = 0;
-            if (i == j)
-            {
-                matrix[i][j] = 1;
-            }
+            numero = rand() % 100;
+            numero = rand() % (numero);    
+            matrix[i][j] = numero;
         }
     }
 
-    for (int i = 0; i < di; i++)
+    printf("La matriz original es\n");
+    for (int i = 0; i < dx; i++)
     {
-        for (int j = 0; j < dj; j++)
+        for (int j = 0; j < dy; j++)
         {
+            
             printf("%d ", matrix[i][j]);
         }
         printf("\n");
